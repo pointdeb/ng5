@@ -21,7 +21,8 @@ export class UsersComponent implements OnInit {
   constructor(private userSvc: UserService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => this.params = params);
+    // this.route.queryParams.subscribe(params => this.params = params);
+    this.route.params.subscribe(params => this.params = params);
     this.refresh();
   }
 
@@ -58,7 +59,7 @@ export class UsersComponent implements OnInit {
       const res  = result as any;
       this.users = res.data;
       this.links = res.links;
-      console.log(this.users);
+      // console.log(this.users);
       this.hideLoading();
     });
   }
@@ -71,14 +72,14 @@ export class UsersComponent implements OnInit {
           this.refresh();
         }, err => {
           this.error = err.error;
-          console.error(this.error);
+          // console.error(this.error);
         });
       } else {
         this.userSvc.update(this.user).subscribe(result => {
           this.refresh();
         }, err => {
           this.error = err.error;
-          console.error(this.error);
+          // console.error(this.error);
         });
       }
     }
@@ -91,7 +92,7 @@ export class UsersComponent implements OnInit {
         this.refresh();
       }, err => {
         this.error = err.error;
-        console.error(this.error);
+        // console.error(this.error);
       });
     }
   }
