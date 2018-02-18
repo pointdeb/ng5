@@ -22,8 +22,6 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => this.params = params);
-    console.log(this);
-
     this.refresh();
   }
 
@@ -31,11 +29,11 @@ export class UsersComponent implements OnInit {
     if (!source) {
       return false;
     }
-    console.log(typeof source, source);
     return source.search(str) !== -1;
   }
 
   showLoading () {
+    this.error = undefined;
     this.loading = true;
   }
 
