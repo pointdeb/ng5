@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { UsersModule } from './users/users.module';
+import { MenuModule } from './menu/menu.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { UsersModule } from './users/users.module';
   imports: [
     BrowserModule,
     Ng2Webstorage,
+    MenuModule,
     UsersModule,
     RouterModule.forRoot([])
   ],
