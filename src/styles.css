@@ -2,3 +2,7 @@
 /* body {
   background-color: #e9ebee;
 } */
+
+html, body {
+  font: "Helvetica Neue", Arial, sans-serif;
+}
