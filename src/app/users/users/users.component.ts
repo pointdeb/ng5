@@ -13,11 +13,11 @@ export class UsersComponent implements OnInit {
 
   public search: any = {};
   public user: User = {};
-  protected users: any = [];
-  protected links: any = [];
-  protected loading: Boolean = false;
-  protected params: any = {};
-  protected error: String;
+  public users: any = [];
+  public links: any = [];
+  public loading: Boolean = false;
+  public params: any = {};
+  public error: string;
   constructor(private userSvc: UserService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -67,7 +67,7 @@ export class UsersComponent implements OnInit {
   add (data: NgForm) {
     this.showLoading();
     if (data.valid) {
-      if (!this.user.user_id) {
+      if (!this.user.id) {
         this.userSvc.add(data.value).subscribe(result => {
           this.refresh();
         }, err => {
@@ -98,12 +98,12 @@ export class UsersComponent implements OnInit {
   }
 
   prepareUpdate (data: User) {
-    if (this.user.user_id) {
+    if (this.user.id) {
       this.users.unshift(this.user);
     }
     this.user = data;
     for (let i = 0; i < this.users.length; i++) {
-      if (this.users[i].user_id === data.user_id) {
+      if (this.users[i].id === data.id) {
         this.users.splice(i, 1);
       }
     }

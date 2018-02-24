@@ -48,8 +48,8 @@
             <button class="btn btn-outline-danger fa fa-trash" (click)="delete(user)"></button>
           </span>
         </li>
-        <li class="list-group-item" *ngIf="users.length === 0 && !search.keyword && !loading"> <span class="text-center">No data</span> </li>
-        <li class="list-group-item" *ngIf="users.length === 0 && search.keyword && !loading"> <span class="text-center">No result of {{ search.keyword }} </span> </li>
+        <li class="list-group-item mb-sm-3" *ngIf="users.length === 0 && !search.keyword && !loading"> <span class="text-center">No data</span> </li>
+        <li class="list-group-item mb-sm-3" *ngIf="users.length === 0 && search.keyword && !loading"> <span class="text-center">No result of {{ search.keyword }} </span> </li>
       </ul>
       <nav class="mt-sm-2" *ngIf="users.length !== 0" aria-label="user pagination">
         <ul class="pagination">
